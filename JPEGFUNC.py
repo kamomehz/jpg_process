@@ -43,7 +43,7 @@ def cutTo8(cbcr):
         for cuty in range(cbcr.shape[1]//8):
             cbcrResize=cbcr[cutx*8:cutx*8+8,cuty*8:cuty*8+8].copy()
 #             break
-            yield cbcrResize
+            yield [cbcrResize, cutx, cuty]
 
 def normalize(img):
     vmin = np.min(img)
